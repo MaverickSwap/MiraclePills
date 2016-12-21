@@ -21,7 +21,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         statePicker.dataSource = self
         statePicker.delegate = self
         
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +49,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         stateBtn.setTitle(states[row], forState: UIControlState.Normal)
         statePicker.hidden = true
     }
-    
-    
     
     
     
