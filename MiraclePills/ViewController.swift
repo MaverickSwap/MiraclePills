@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var stateBtn: UIButton!
     @IBOutlet weak var statePicker: UIPickerView!
     
+    @IBOutlet weak var buyNowBtn: UIButton!
     let states = ["New York", "California", "Boston", "New Orleans", "Washington DC"]
     
     override func viewDidLoad() {
@@ -30,6 +31,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     @IBAction func stateBtnPressed(sender: AnyObject) {
         statePicker.hidden = false
+        
+        for i in 14...78
+        {
+            view.viewWithTag(i)?.hidden = true
+        }
     }
     
     
@@ -48,8 +54,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         stateBtn.setTitle(states[row], forState: UIControlState.Normal)
         statePicker.hidden = true
+        
+        for i in 14...18
+        {
+            view.viewWithTag(i)?.hidden = false
+        }
     }
     
+   
+    @IBAction func buyNowBtnPressed(sender: AnyObject) {
+        
+        for i in 1...18
+        {
+            view.viewWithTag(i)?.hidden = true
+        }
+        view.viewWithTag(19)?.hidden = false
+        
+        
+    }
     
     
 }
